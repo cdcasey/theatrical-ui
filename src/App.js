@@ -10,7 +10,7 @@ class App extends Component {
     const api = process.env.THEATRICAL_API || 'localhost:8000';
     axios.get(`http://${api}/users`)
       .then((users) => {
-        console.table(users.data.users);
+        console.log('users api called');
       })
       .catch(err => console.err)
   }
