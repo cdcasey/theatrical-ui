@@ -28,11 +28,16 @@ class App extends Component {
     });
   }
 
+  getUserId() {
+    return Number(document.cookie.split('=')[1]);
+  }
+
   handleLogin(event) {
     event.preventDefault();
     axios.post(`http://${this.api}/auth`, { email: this.state.email, password: this.state.password })
       .then(response => {
         if (response.status === 200) {
+          document.cookie = `id=${response.data.user.id}`;
           this.setState({ email: null, password: null, user: response.data.user });
         }
       })
@@ -42,7 +47,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.user) {
+    if (this.getUserId()) {
       return (
         <React.Fragment>
           <Nav />
