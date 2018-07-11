@@ -24,7 +24,7 @@ export default function LoginForm(props) {
                         <button className="btn btn-primary btn-block" type="submit">Login</button>
                     </form>
                     <div className="text-center">
-                        <a className="d-block small mt-3" href="register.html">Register an Account</a>
+                        <a className="d-block small mt-3" onClick={props.register} href="#">Register an Account</a>
                         <a className="d-block small" href="forgot-password.html">Forgot Password?</a>
                     </div>
                 </div>
