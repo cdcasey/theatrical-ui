@@ -1,15 +1,30 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.api = process.env.THEATRICAL_API || 'localhost:8000';
+        this.state = { productions: [] };
+    }
+
     logoutHandler() {
         document.cookie = 'id=null';
+    }
+
+    componentDidMount() {
+        axios.get(`http://${this.api}/productions/`, { headers: { userid: this.props.userId } })
+            .then((response) => {
+                this.setState({ productions: [...this.state.productions, response.data.productions] });
+            })
+            .catch(err => console.error(err));
     }
 
     render() {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-                    <a className="navbar-brand" href="index.html">Start Bootstrap</a>
+                    <a className="navbar-brand" href="index.html">{this.props.user.first_name} {this.props.user.last_name}</a>
                     <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
