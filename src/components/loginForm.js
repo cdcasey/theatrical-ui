@@ -6,7 +6,7 @@ export default function LoginForm(props) {
             <div className="card card-login mx-auto mt-5">
                 <div className="card-header">Login</div>
                 <div className="card-body">
-                    <form onSubmit={props.loginHandler} method="POST">
+                    <form onSubmit={props.loginHandler}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email address</label>
                             <input onChange={props.fieldHandler} className="form-control" id="exampleInputEmail1" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email" />

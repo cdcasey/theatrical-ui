@@ -26,7 +26,7 @@ export default class Login extends React.Component {
         } else {
             return (
                 <RegisterForm
-                    loginHandler={this.props.loginHandler}
+                    registrationHandler={this.props.registrationHandler}
                     fieldHandler={this.props.fieldHandler}
                     login={this.switchBetweenLoginAndRegister.bind(this)}
                 />

@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.api = process.env.THEATRICAL_API || 'localhost:8000';
     this.state = {
-      user: false
+      user: false,
+      postData: {}
     }
   }
 
@@ -22,7 +23,7 @@ class App extends Component {
 
   handleLoginFormChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      postData: { ...this.state.postData, [event.target.name]: event.target.value }
     });
   }
 
@@ -32,16 +33,29 @@ class App extends Component {
 
   handleLogin(event) {
     event.preventDefault();
-    axios.post(`http://${this.api}/auth`, { email: this.state.email, password: this.state.password })
+    axios.post(`http://${this.api}/auth`, this.state.postData)
       .then(response => {
         if (response.status === 200) {
           document.cookie = `id=${response.data.user.id}`;
-          this.setState({ email: null, password: null, user: response.data.user });
-          return response
+          this.setState({ postData: {}, user: response.data.user });
         }
       })
       .catch((error) => {
         // console.log('error');
+        alert(error.response.data);
+      });
+  }
+
+  handleRegistration(event) {
+    event.preventDefault()
+    axios.post(`http://${this.api}/users`, this.state.postData)
+      .then(response => {
+        if (response.status === 200) {
+          document.cookie = `id=${response.data.user[0].id}`;
+          this.setState({ postData: {}, user: response.data.user[0] });
+        }
+      })
+      .catch((error) => {
         alert(error.response.data);
       });
   }
@@ -68,7 +82,11 @@ class App extends Component {
       );
     } else {
       return (
-        <Login loginHandler={this.handleLogin.bind(this)} fieldHandler={this.handleLoginFormChange.bind(this)} />
+        <Login
+          loginHandler={this.handleLogin.bind(this)}
+          registrationHandler={this.handleRegistration.bind(this)}
+          fieldHandler={this.handleLoginFormChange.bind(this)}
+        />
       );
     }
   }
