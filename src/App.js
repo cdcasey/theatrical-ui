@@ -69,18 +69,19 @@ class App extends Component {
   }
 
   render() {
-    const id = this.getUserId()
-    if (id) {
+    const cookieId = this.getUserId()
+    if (cookieId) {
       if (!this.state.user) {
-        this.getUserData(id);
+        this.getUserData(cookieId);
       }
       return (
         <React.Fragment>
-          <Nav user={this.state.user} userId={id} />
+          <Nav user={this.state.user} userId={cookieId} />
           <Content user={this.state.user} />
         </React.Fragment>
       );
     } else {
+      // this.setState({ ...this.state, user: false });
       return (
         <Login
           loginHandler={this.handleLogin.bind(this)}
