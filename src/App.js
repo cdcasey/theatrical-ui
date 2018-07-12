@@ -10,15 +10,9 @@ class App extends Component {
     this.api = process.env.THEATRICAL_API || 'localhost:8000';
     this.state = {
       user: false,
+      productions: [],
       postData: {}
     }
-  }
-
-  componentDidMount() {
-    axios.get(`http://${this.api}/users`)
-      .then((users) => {
-      })
-      .catch(err => console.error('ERR', err));
   }
 
   handleLoginFormChange(event) {
@@ -37,11 +31,11 @@ class App extends Component {
       .then(response => {
         if (response.status === 200) {
           document.cookie = `id=${response.data.user.id}`;
+          this.getProductions(response.data.user.id);
           this.setState({ postData: {}, user: response.data.user });
         }
       })
       .catch((error) => {
-        // console.log('error');
         alert(error.response.data);
       });
   }
@@ -60,6 +54,12 @@ class App extends Component {
       });
   }
 
+  refreshData() {
+    const userid = this.getUserId();
+    this.getUserData(userid);
+    this.getProductions(userid);
+  }
+
   getUserData(userid) {
     axios.get(`http://${this.api}/users/${userid}`, { headers: { userid } })
       .then((response) => {
@@ -68,20 +68,28 @@ class App extends Component {
       .catch(err => console.error('ERR', err));
   }
 
+  getProductions(userid) {
+    axios.get(`http://${this.api}/productions/`, { headers: { userid } })
+      .then((response) => {
+        const productions = this.state.productions.slice().concat(response.data.productions);
+        this.setState({ productions });
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
     const cookieId = this.getUserId()
     if (cookieId) {
       if (!this.state.user) {
-        this.getUserData(cookieId);
+        this.refreshData(cookieId);
       }
       return (
         <React.Fragment>
-          <Nav user={this.state.user} userId={cookieId} />
+          <Nav user={this.state.user} userId={cookieId} productions={this.state.productions} />
           <Content user={this.state.user} />
         </React.Fragment>
       );
     } else {
-      // this.setState({ ...this.state, user: false });
       return (
         <Login
           loginHandler={this.handleLogin.bind(this)}
