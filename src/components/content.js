@@ -23,7 +23,6 @@ export default class Content extends React.Component {
     }
 
     listCast() {
-        console.log(this.props)
         return this.props.cast.map((castMember) => {
             return (
                 <React.Fragment key={castMember.character}>
@@ -39,7 +38,6 @@ export default class Content extends React.Component {
     render() {
         let content = null;
         if (this.props.selectedProduction.id) {
-            console.log('production selected');
             content = this.listCast();
         } else {
             content = this.listProductions();
