@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+import CastList from './castList';
+import ProductionList from './productionList';
+
 export default class Content extends React.Component {
     constructor(props) {
         super(props)
@@ -9,38 +12,18 @@ export default class Content extends React.Component {
         }
     }
 
-    listProductions() {
-        return this.props.productions.map((production) => {
-            return (
-                <React.Fragment key={production.id}>
-                    <a onClick={this.props.selectProduction} className="dropdown-item" href="#">
-                        <strong id={production.id}>{production.name}</strong>
-                    </a>
-                    <div className="dropdown-divider"></div>
-                </React.Fragment>
-            )
-        })
-    }
-
-    listCast() {
-        return this.props.cast.map((castMember) => {
-            return (
-                <React.Fragment key={castMember.character}>
-                    <a onClick={this.props.selectProduction} className="dropdown-item" href="#">
-                        {castMember.first_name} {castMember.last_name} - <strong>{castMember.character}</strong>
-                    </a>
-                    <div className="dropdown-divider"></div>
-                </React.Fragment>
-            )
-        })
-    }
-
     render() {
         let content = null;
         if (this.props.selectedProduction.id) {
-            content = this.listCast();
+            content = <CastList cast={this.props.cast} />;
         } else {
-            content = this.listProductions();
+            content = (
+                <React.Fragment>
+                    <h1>Welcome!</h1>
+                    <p>Please select from one of the following:</p>
+                    <ProductionList productions={this.props.productions} selectProduction={this.props.selectProduction} />
+                </React.Fragment>
+            );
         }
         return (
             <div className="content-wrapper">
@@ -54,11 +37,7 @@ export default class Content extends React.Component {
                     </ol>
                     <div className="row">
                         <div className="col-12">
-                            <h1>Welcome!</h1>
-                            <p>Please select from one of the following:</p>
-                            {/* <ul> */}
                             {content}
-                            {/* </ul> */}
                         </div>
                     </div>
                 </div>

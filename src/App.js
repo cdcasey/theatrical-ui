@@ -81,6 +81,7 @@ class App extends Component {
 
   selectProduction(event) {
     const selectedProductionId = this.state.productions.filter(production => production.id === Number(event.target.id))[0];
+
     axios.get(`http://${this.api}/productions/${selectedProductionId.id}/cast`, { headers: { userid: this.getUserId() } })
       .then((response) => {
         this.setState({ cast: response.data.cast });
