@@ -11,8 +11,8 @@ export default class Nav extends React.Component {
         return this.props.productions.map((production) => {
             return (
                 <React.Fragment key={production.id}>
-                    <a className="dropdown-item" href="#">
-                        <strong>{production.name}</strong>
+                    <a onClick={this.props.selectProduction} className="dropdown-item" href="#">
+                        <strong id={production.id}>{production.name}</strong>
                     </a>
                     <div className="dropdown-divider"></div>
                 </React.Fragment>

@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       user: false,
       productions: [],
+      currentProduction: {},
+      cast: [],
       postData: {}
     }
   }
@@ -77,6 +79,21 @@ class App extends Component {
       .catch(err => console.error(err));
   }
 
+  selectProduction(event) {
+    const selectedProductionId = this.state.productions.filter(production => production.id === Number(event.target.id))[0];
+    console.log("UI", selectedProductionId);
+
+    axios.get(`http://${this.api}/productions/${selectedProductionId.id}/cast`, { headers: { userid: this.getUserId() } })
+      .then((response) => {
+        this.setState({ cast: response.data.cast });
+      })
+      .catch(err => console.error(err));
+
+    this.setState({
+      currentProduction: selectedProductionId
+    });
+  }
+
   render() {
     const cookieId = this.getUserId()
     if (cookieId) {
@@ -85,8 +102,19 @@ class App extends Component {
       }
       return (
         <React.Fragment>
-          <Nav user={this.state.user} userId={cookieId} productions={this.state.productions} />
-          <Content user={this.state.user} />
+          <Nav
+            user={this.state.user}
+            userId={cookieId}
+            productions={this.state.productions}
+            selectProduction={this.selectProduction.bind(this)}
+          />
+          <Content
+            productions={this.state.productions}
+            userId={cookieId}
+            selectedProduction={this.state.currentProduction}
+            cast={this.state.cast}
+            selectProduction={this.selectProduction.bind(this)}
+          />
         </React.Fragment>
       );
     } else {
