@@ -14,9 +14,23 @@ export default class Content extends React.Component {
 
     render() {
         let content = null;
-        if (this.props.selectedProduction.id) {
+        if (this.props.mode === 'cast') {
             content = <CastList cast={this.props.cast} />;
-        } else {
+        } else if (this.props.mode === 'info') {
+            content = <p>here is some info</p>
+        }
+        else if (this.props.mode === 'schedule') {
+            content = <p>here is a schedule</p>
+        }
+        else if (this.props.selectedProduction.id) {
+            content = (
+                <React.Fragment>
+                    {/* <h1>Welcome!</h1> */}
+                    <p>You may now manage your production</p>
+                </React.Fragment>
+            );
+        }
+        else {
             content = (
                 <React.Fragment>
                     <h1>Welcome!</h1>

@@ -30,21 +30,21 @@ export default class Nav extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
-                            <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                                <a className="nav-link" href="index.html">
+                            <li id="info" onClick={this.props.handleNavClick} className="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                                <a className="nav-link">
                                     <i className="fa fa-fw fa-dashboard"></i>
                                     <span className="nav-link-text">Info</span>
                                 </a>
                             </li>
-                            <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Cast">
-                                <a className="nav-link" href="charts.html">
-                                    <i className="fa fa-fw fa-area-chart"></i>
+                            <li id="cast" onClick={this.props.handleNavClick} className="nav-item" data-toggle="tooltip" data-placement="right" title="Cast">
+                                <a className="nav-link">
+                                    <i className="fa fa-fw fa-users"></i>
                                     <span className="nav-link-text">Cast</span>
                                 </a>
                             </li>
-                            <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Schedule">
-                                <a className="nav-link" href="tables.html">
-                                    <i className="fa fa-fw fa-table"></i>
+                            <li id="schedule" onClick={this.props.handleNavClick} className="nav-item" data-toggle="tooltip" data-placement="right" title="Schedule">
+                                <a className="nav-link">
+                                    <i className="fa fa-fw fa-calendar"></i>
                                     <span className="nav-link-text">Schedule</span>
                                 </a>
                             </li>

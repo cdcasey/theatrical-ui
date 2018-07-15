@@ -13,6 +13,7 @@ class App extends Component {
       productions: [],
       currentProduction: {},
       cast: [],
+      mode: null,
       postData: {}
     }
   }
@@ -21,6 +22,16 @@ class App extends Component {
     this.setState({
       postData: { ...this.state.postData, [event.target.name]: event.target.value }
     });
+  }
+
+  handleNavClick(event) {
+    event.preventDefault();
+    // If there's not an active production, the side links shouldn't do anything
+    if (!this.state.currentProduction.id) return;
+    const eventParent = event.target.tagName === 'A' ? event.target.parentElement : event.target.parentElement.parentElement;
+    this.setState({
+      mode: eventParent.id
+    })
   }
 
   getUserId() {
@@ -106,8 +117,10 @@ class App extends Component {
             userId={cookieId}
             productions={this.state.productions}
             selectProduction={this.selectProduction.bind(this)}
+            handleNavClick={this.handleNavClick.bind(this)}
           />
           <Content
+            mode={this.state.mode}
             productions={this.state.productions}
             userId={cookieId}
             selectedProduction={this.state.currentProduction}
