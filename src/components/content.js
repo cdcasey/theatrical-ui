@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import CastList from './castList';
 import ProductionList from './productionList';
+import Calendar from './calendar';
 
 export default class Content extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ export default class Content extends React.Component {
         if (this.props.mode === 'cast') {
             content = <CastList cast={this.props.cast} />;
         } else if (this.props.mode === 'info') {
-            content = <p>here is some info</p>
+            content = <Calendar />
         }
         else if (this.props.mode === 'schedule') {
             content = <p>here is a schedule</p>
