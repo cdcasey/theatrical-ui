@@ -18,10 +18,10 @@ export default class Content extends React.Component {
         if (this.props.mode === 'cast') {
             content = <CastList cast={this.props.cast} />;
         } else if (this.props.mode === 'info') {
-            content = <Calendar />
+            content = <p>here is some info</p>
         }
         else if (this.props.mode === 'schedule') {
-            content = <p>here is a schedule</p>
+            content = <Calendar />
         }
         else if (this.props.selectedProduction.id) {
             content = (
