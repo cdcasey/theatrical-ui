@@ -6,7 +6,7 @@ import moment from 'moment';
 
 // import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 
-import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
+// import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 BigCalendar.momentLocalizer(moment);
@@ -20,24 +20,33 @@ export default class Caledar extends React.Component {
     //             // put your options and callbacks here
     //         });
     //     }
-    state = {
-        events: [
-            {
-                start: new Date(),
-                end: new Date(moment().add(1, "days")),
-                title: "Some title"
-            }
-        ]
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: [
+                {
+                    start: new Date(),
+                    end: new Date(moment().add(1, "days")),
+                    title: "Some title"
+                },
+                {
+                    id: 14,
+                    title: 'Today',
+                    start: new Date(new Date().setHours(new Date().getHours() - 3)),
+                    end: new Date(new Date().setHours(new Date().getHours() + 3)),
+                    className: 'todayz'
+                }
+            ]
+        };
+    }
 
     render() {
-        const myEventsList = null;
-        return <BigCalendar
-            events={this.state.events}
-            startAccessor='startDate'
-            endAccessor='endDate'
-            style={{ height: "100vh" }}
-            defaultDate={new Date()}
-        />
+        return (
+            <BigCalendar
+                events={this.state.events}
+                style={{ height: "100vh" }}
+                defaultDate={new Date()}
+            />
+        )
     }
 }
