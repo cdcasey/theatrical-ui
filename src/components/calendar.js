@@ -26,9 +26,13 @@ export default class Caledar extends React.Component {
                     date.title = `Rehearsal: ${date.name}`;
                     date.end_time = date.end_time || date.start_time;
                 });
+                response.data.blackout_dates.forEach((date) => {
+                    date.title = `Blackout: ${date.first_name} ${date.last_name}`;
+                    date.end_time = date.end_time || date.start_time;
+                });
                 this.setState({
                     events:
-                        response.data.production_dates.concat(response.data.rehearsal_dates)
+                        response.data.production_dates.concat(response.data.rehearsal_dates).concat(response.data.blackout_dates)
                 })
             })
             .catch((error) => {
