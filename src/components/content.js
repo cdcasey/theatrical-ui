@@ -21,7 +21,7 @@ export default class Content extends React.Component {
             content = <p>here is some info</p>
         }
         else if (this.props.mode === 'schedule') {
-            content = <Calendar />
+            content = <Calendar productionId={this.props.selectedProduction.id} />
         }
         else if (this.props.selectedProduction.id) {
             content = (

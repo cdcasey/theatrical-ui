@@ -1,6 +1,7 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import axios from 'axios';
 
 // TODO: import not working
 
@@ -14,14 +15,27 @@ BigCalendar.momentLocalizer(moment);
 // const DnDCalendar = withDragAndDrop(BigCalendar);
 
 export default class Caledar extends React.Component {
-    //     componentDidMount() {
-    //         $('#calendar').fullCalendar({
-    //             editable: false,
-    //             // put your options and callbacks here
-    //         });
-    //     }
+    componentDidMount() {
+        console.log(this.props);
+        const userid = null;
+        axios.get(`http://${this.api}/productions/${this.props.productionId}/dates`, { headers: { userid } })
+            .then((response) => {
+                response.data.production_dates.forEach((date) => {
+                    date.title = "Performance";
+                });
+                this.setState({
+                    events:
+                        response.data.production_dates
+                })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
     constructor(props) {
         super(props);
+        this.api = process.env.THEATRICAL_API || 'localhost:8000';
         this.state = {
             events: [
                 {
@@ -44,6 +58,8 @@ export default class Caledar extends React.Component {
         return (
             <BigCalendar
                 events={this.state.events}
+                startAccessor='start_time'
+                endAccessor='end_time'
                 style={{ height: "100vh" }}
                 defaultDate={new Date()}
             />
