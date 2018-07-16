@@ -61,7 +61,7 @@ export default class Content extends React.Component {
                 <footer className="sticky-footer">
                     <div className="container">
                         <div className="text-center">
-                            <small>Copyright © Your Website 2018</small>
+                            <small>Copyright © Chris Casey 2018</small>
                         </div>
                     </div>
                 </footer>
