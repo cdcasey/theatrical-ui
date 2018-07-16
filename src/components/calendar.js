@@ -16,16 +16,19 @@ BigCalendar.momentLocalizer(moment);
 
 export default class Caledar extends React.Component {
     componentDidMount() {
-        console.log(this.props);
         const userid = null;
         axios.get(`http://${this.api}/productions/${this.props.productionId}/dates`, { headers: { userid } })
             .then((response) => {
                 response.data.production_dates.forEach((date) => {
-                    date.title = "Performance";
+                    date.title = 'Performance';
+                });
+                response.data.rehearsal_dates.forEach((date) => {
+                    date.title = `Rehearsal: ${date.name}`;
+                    date.end_time = date.end_time || date.start_time;
                 });
                 this.setState({
                     events:
-                        response.data.production_dates
+                        response.data.production_dates.concat(response.data.rehearsal_dates)
                 })
             })
             .catch((error) => {
