@@ -65,14 +65,7 @@ export default class Nav extends React.Component {
                                     <h6 className="dropdown-header">Available Productions:</h6>
                                     <div className="dropdown-divider"></div>
                                     {this.listProductions()}
-                                    <a className="dropdown-item" href="#">
-                                        <strong>David Miller</strong>
-                                        <span className="small float-right text-muted">11:21 AM</span>
-                                        <div className="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                                    </a>
-                                    <div className="dropdown-divider"></div>
-
-                                    <a className="dropdown-item small" href="#">View all messages</a>
+                                    <a className="dropdown-item small" href="#">Create new...</a>
                                 </div>
                             </li>
                             <li className="nav-item">
