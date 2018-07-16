@@ -21,10 +21,12 @@ TheatriCAL is built with the following technologies:
 * React
 * Axios
 * Big Calendar
+* Mocha, Chai, Supertest
 
 ## Challenges
 
-The first challenge was organizing the data model. This app has many separate pieces of data that need to relate in some way. The two pieces of data that the purpose of this app revolve around are scenes and blackout dates. A director should be able to schedule a scene rehearsal, and the app should know who is needed for that rehearsal and who is unavailable. I originally thought I could just put lists of dates into tables as jsonb objects. While that did work on a technical level, breaking the dates out into their own tables definitely simplified working with the data. After quite a bit of thinking, planning, and testing, I created the following ERD:
+The first challenge was organizing the data model. This app has many separate pieces of data that need to relate in some way. The two pieces of data that the purpose of this app revolve around are scenes and blackout dates. A director should be able to schedule a scene rehearsal, and the app should know who is needed for that rehearsal and who is unavailable. I originally thought I could just put lists of dates into tables as jsonb objects. While that did work on a technical level, breaking the dates out into their own tables definitely simplified working with the data. After quite a bit of thinking, planning, and testing, I created the following ERD. Migrations and seed data soon followed.
 
 ![erd](readme-assets/theatrical-erd.png)
 
+The 
