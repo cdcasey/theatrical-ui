@@ -66,12 +66,22 @@ Finally, I may try adding end-to-end features next time. This time I began with 
 ### Things I Plan to Add Soon
 
 * Improved security
+    * I will use JWTs to better secure the API
 * Front-end tests
+    * I will use Jest to add tests for the React components
 * Audition form creation
+    * Directors will be able to create forms for potential actors to fill out
 * Assigning auditioners to roles
+    * Directors will be able to assign actors to roles
 * Drag and drop in the calendar
+    * FullCalendar should take care of this, plus I will add event hooks to handle the drops
 * Event creation
+    * Directors will be able to add new performance or rehearsal dates, actors will be able to add new black out dates
 * Production creation
+    * Directors will be able to create productions with dates, a play, and an audition form (or just a cast)
 * Play creation
+    * If a play is not in the database, new ones will be able to be added
 * Announcements via email or SMS
+    * Directors will be able to easily brodcast updates or announcements
 * Ticketing
+    * I'll integrate an API like Stripe or Square to add ticketing to productions
