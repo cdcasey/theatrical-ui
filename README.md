@@ -43,7 +43,7 @@ I had initially chosen a JQuery-based plugin called [FullCalendar](https://fullc
 
 I also noticed that there's a JQuery-based navigaton toggler in the Bootstrap template that doesn't work. I commented it out for the time being.
 
-React
+### React
 
 Then of course there was the challenge of learning to use React itself. I think using React has two main challenges:
 * Deciding which pieces of the UI become a component
@@ -51,3 +51,13 @@ Then of course there was the challenge of learning to use React itself. I think 
 
 It's possible that this app is complicated enough to need something like the Context API or even Redux, but for now state and props in the various components works fine.
 
+### Things I Plan to Add Soon
+
+* Improved security
+* Front-end tests
+* Audition form creation
+* Assigning auditioners to roles
+* Drag and drop in the calendar
+* Event creation
+* Production creation
+* Play creation
