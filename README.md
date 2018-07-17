@@ -35,4 +35,10 @@ Shortly after I completed the ERD, I created the database migrations, seed data,
 
 ### React + Bootstrap
 
-I chose a [Bootstrap template](https://startbootstrap.com/template-overviews/sb-admin/) for the layout because it was responsive and I could see where menu items would go. It also meant that I didn't have to create my own UI. However, this was my first React application. I found the process of cutting up the template into React components tedious and slightly error-prone. While I did get a functioning UI in the end, I think may have been better to build components as they were needed. 
+I chose a [Bootstrap template](https://startbootstrap.com/template-overviews/sb-admin/) for the layout because it was responsive and I could see where menu items would go. It also meant that I didn't have to create my own UI. However, this was my first React application. I found the process of cutting up the template into React components tedious and slightly error-prone. While I did get a functioning UI in the end, I think may have been better to build components as they were needed.
+
+### React + JQuery
+
+I had initially chosen a JQuery-based plugin called [FullCalendar](https://fullcalendar.io/) for the calendar functionality. However, once I tried adding the calendar to the React component that was to contain it, it did not render. I learned the hard way that DOM-manipulation libraries do not play well with virtual DOM frameworks. I found a tutorial that said to put the JQuery code that calls FullCalendr in the componentDidMount method, but that didn't work either. In the end I foundd on a React-based calendar that shows up, but is not as full-featured as FullCalendar. This is a feature with which I will continue to experiment. If I can't find a satisfactory 3rd-party solution, I will create my own calendar.
+
+I also noticed that there's a JQuery-based navigaton toggler in the Bootstrap template that doesn't work. I commented it out for the time being.
