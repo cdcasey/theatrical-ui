@@ -67,4 +67,5 @@ Finally, I may try adding end-to-end features next time. This time I began with 
 * Event creation
 * Production creation
 * Play creation
+* Announcements via email or SMS
 * Ticketing
