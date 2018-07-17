@@ -12,15 +12,19 @@ While all of the information is contained within this README, this project is sp
 [TreatriCAL-API](https://github.com/cdcasey/theatrical)
 
 TheatriCAL is built with the following technologies:
+
+#### Front End
+* React
+* Axios
+* Big Calendar
+* Bootstrap
+
+#### Back End
 * Node
 * Express
 * Knex
 * PostgreSQL
 * Bcrypt
-* Bootstrap
-* React
-* Axios
-* Big Calendar
 * Mocha, Chai, Supertest
 
 ## Challenges
