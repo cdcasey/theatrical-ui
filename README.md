@@ -42,3 +42,12 @@ I chose a [Bootstrap template](https://startbootstrap.com/template-overviews/sb-
 I had initially chosen a JQuery-based plugin called [FullCalendar](https://fullcalendar.io/) for the calendar functionality. However, once I tried adding the calendar to the React component that was to contain it, it did not render. I learned the hard way that DOM-manipulation libraries do not play well with virtual DOM frameworks. I found a tutorial that said to put the JQuery code that calls FullCalendr in the componentDidMount method, but that didn't work either. In the end I foundd on a React-based calendar that shows up, but is not as full-featured as FullCalendar. This is a feature with which I will continue to experiment. If I can't find a satisfactory 3rd-party solution, I will create my own calendar.
 
 I also noticed that there's a JQuery-based navigaton toggler in the Bootstrap template that doesn't work. I commented it out for the time being.
+
+React
+
+Then of course there was the challenge of learning to use React itself. I think using React has two main challenges:
+* Deciding which pieces of the UI become a component
+* Deciding what information needs to live in state in the various components
+
+It's possible that this app is complicated enough to need something like the Context API or even Redux, but for now state and props in the various components works fine.
+
