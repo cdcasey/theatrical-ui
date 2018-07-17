@@ -51,6 +51,12 @@ Then of course there was the challenge of learning to use React itself. I think 
 
 It's possible that this app is complicated enough to need something like the Context API or even Redux, but for now state and props in the various components works fine.
 
+### Other Lessons Learned
+
+I used an agile methodology during development. Developing in this way enabled me to easily make adjustments and add pieces to both the front and back end as needed. However, I think better planning up front would be helpful. I did have simple mockups and some user stories. In future, however, I plan on creating those in conjunction with each other. I think doing so will provide a clearer development road map than what I had this time around.
+
+Finally, I may try adding end-to-end features next time. This time I began with the back end, and I did indeed have a solid foundation upon which to build. Next time, however, I think going feature-by-feature on both the front and back end together might be a good way to build an app piece-by-piece.
+
 ### Things I Plan to Add Soon
 
 * Improved security
@@ -61,3 +67,4 @@ It's possible that this app is complicated enough to need something like the Con
 * Event creation
 * Production creation
 * Play creation
+* Ticketing
