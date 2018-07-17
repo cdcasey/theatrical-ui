@@ -2,7 +2,9 @@
 
 Theatre rehearsals are notoriously difficult to schedule. Actors typically submit black-out dates on paper, email, or via google forms. Regardless of the method, theatre directors need to manually collate the information in order to schedule rehearsals. TheatriCAL puts all of the information necessary to schedule rehearsals in one place.
 
-[Demo Video](https://youtu.be/6_qVLI79CWY)
+[Demo Video](https://youtu.be/6_qVLI79CWY):
+<br>
+[![video thumbnail](readme-assets/thumb.png)](https://youtu.be/6_qVLI79CWY "theatrical demo")
 
 Current deployment can be found at https://theatrical-ui.herokuapp.com
 <br>
