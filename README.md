@@ -43,6 +43,8 @@ I had initially chosen a JQuery-based plugin called [FullCalendar](https://fullc
 
 I also noticed that there's a JQuery-based navigaton toggler in the Bootstrap template that doesn't work. I commented it out for the time being.
 
+_Update_: There is a package called [fullcalendar-reactwrapper](https://github.com/sanjeev07/fullcalendar-reactWrapper) that should work.
+
 ### React
 
 Then of course there was the challenge of learning to use React itself. I think using React has two main challenges:
