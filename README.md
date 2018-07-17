@@ -4,6 +4,12 @@ Theatre rehearsals are notoriously difficult to schedule. Actors typically submi
 
 [Demo Video](https://youtu.be/6_qVLI79CWY)
 
+Current deployment can be found at https://theatrical-ui.herokuapp.com
+<br>
+Demo user: cdcasey@gmail.com
+<br>
+Demo password: chris
+
 ## Stack
 While all of the information is contained within this README, this project is split into two separate repositories:
 
