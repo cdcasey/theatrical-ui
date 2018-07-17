@@ -5,7 +5,7 @@ Theatre rehearsals are notoriously difficult to schedule. Actors typically submi
 [Demo Video](https://youtu.be/6_qVLI79CWY)
 
 ## Stack
-While all of the information is contained withing this README, this project is split into two separate repositories:
+While all of the information is contained within this README, this project is split into two separate repositories:
 
 [TheatriCAL-UI](https://github.com/cdcasey/theatrical-ui)
 <br>
