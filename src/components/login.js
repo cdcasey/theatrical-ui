@@ -7,7 +7,7 @@ export default class Login extends React.Component {
         super(props);
         this.state = {
             login: true
-        }
+        };
     }
 
     switchBetweenLoginAndRegister() {
