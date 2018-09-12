@@ -5,10 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "moment": "^2.22.2",
-    "react": "^16.4.1",
+    "react": "^16.5.0",
     "react-big-calendar": "^0.19.2",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-dom": "^16.5.0",
+    "react-scripts": "^1.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
