@@ -4,15 +4,17 @@ Theatre rehearsals are notoriously difficult to schedule. Actors typically submi
 
 [Demo Video](https://youtu.be/6_qVLI79CWY):
 <br>
-[![video thumbnail](readme-assets/thumb.png)](https://youtu.be/6_qVLI79CWY "theatrical demo")
+[![video thumbnail](readme-assets/thumb.png)](https://youtu.be/6_qVLI79CWY 'theatrical demo')
 
 Current deployment can be found at https://theatrical-ui.herokuapp.com
+(currently offline)
 <br>
 Demo user: cdcasey@gmail.com
 <br>
-Demo password: chris
+Demo password: **\***
 
 ## Stack
+
 While all of the information is contained within this README, this project is split into two separate repositories:
 
 [TheatriCAL-UI](https://github.com/cdcasey/theatrical-ui)
@@ -22,18 +24,20 @@ While all of the information is contained within this README, this project is sp
 TheatriCAL is built with the following technologies:
 
 #### Front End
-* React
-* Axios
-* Big Calendar
-* Bootstrap
+
+-   React
+-   Axios
+-   Big Calendar
+-   Bootstrap
 
 #### Back End
-* Node
-* Express
-* Knex
-* PostgreSQL
-* Bcrypt
-* Mocha, Chai, Supertest
+
+-   Node
+-   Express
+-   Knex
+-   PostgreSQL
+-   Bcrypt
+-   Mocha, Chai, Supertest
 
 ## Challenges
 
@@ -47,7 +51,7 @@ Shortly after I completed the ERD, I created the database migrations, seed data,
 
 ### React + Bootstrap
 
-I chose a [Bootstrap template](https://startbootstrap.com/template-overviews/sb-admin/) for the layout because it was responsive and I could see where menu items would go. It also meant that I didn't have to create my own UI. However, this was my first React application. I found the process of cutting up the template into React components tedious and slightly error-prone. While I did get a functioning UI in the end, I think may have been better to build components as they were needed.
+I chose a [Bootstrap template](https://startbootstrap.com/template-overviews/sb-admin/) for the layout because it was responsive and I could see where menu items would go. It also meant that I didn't have to create my own UI. However, this was one of my first React applications. I found the process of cutting up the template into React components tedious and slightly error-prone. While I did get a functioning UI in the end, I think may have been better to build components as they were needed.
 
 ### React + JQuery
 
@@ -60,8 +64,9 @@ _Update_: There is a package called [fullcalendar-reactwrapper](https://github.c
 ### React
 
 Then of course there was the challenge of learning to use React itself. I think using React has two main challenges:
-* Deciding which pieces of the UI become a component
-* Deciding what information needs to live in state in the various components
+
+-   Deciding which pieces of the UI become a component
+-   Deciding what information needs to live in state in the various components
 
 It's possible that this app is complicated enough to need something like the Context API or even Redux, but for now state and props in the various components works fine.
 
@@ -73,23 +78,23 @@ Finally, I may try adding end-to-end features next time. This time I began with 
 
 ### Things I Plan to Add Soon
 
-* Improved security
-    * I will use JWTs to better secure the API
-* Front-end tests
-    * I will use Jest to add tests for the React components
-* Audition form creation
-    * Directors will be able to create forms for potential actors to fill out
-* Assigning auditioners to roles
-    * Directors will be able to assign actors to roles
-* Drag and drop in the calendar
-    * FullCalendar should take care of this, plus I will add event hooks to handle the drops
-* Event creation
-    * Directors will be able to add new performance or rehearsal dates, actors will be able to add new black out dates
-* Production creation
-    * Directors will be able to create productions with dates, a play, and an audition form (or just a cast)
-* Play creation
-    * If a play is not in the database, new ones will be able to be added
-* Announcements via email or SMS
-    * Directors will be able to easily brodcast updates or announcements
-* Ticketing
-    * I'll integrate an API like Stripe or Square to add ticketing to productions
+-   Improved security
+    -   I will use JWTs to better secure the API
+-   Front-end tests
+    -   I will use Jest to add tests for the React components
+-   Audition form creation
+    -   Directors will be able to create forms for potential actors to fill out
+-   Assigning auditioners to roles
+    -   Directors will be able to assign actors to roles
+-   Drag and drop in the calendar
+    -   FullCalendar should take care of this, plus I will add event hooks to handle the drops
+-   Event creation
+    -   Directors will be able to add new performance or rehearsal dates, actors will be able to add new black out dates
+-   Production creation
+    -   Directors will be able to create productions with dates, a play, and an audition form (or just a cast)
+-   Play creation
+    -   If a play is not in the database, new ones will be able to be added
+-   Announcements via email or SMS
+    -   Directors will be able to easily brodcast updates or announcements
+-   Ticketing
+    -   I'll integrate an API like Stripe or Square to add ticketing to productions
